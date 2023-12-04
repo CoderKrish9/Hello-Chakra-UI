@@ -1,4 +1,6 @@
 import React from "react";
+import {LockIcon,
+} from '@chakra-ui/icons'
 import {
   FormControl,
   FormLabel,
