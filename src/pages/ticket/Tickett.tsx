@@ -1,4 +1,5 @@
-import { Box, Text, VStack, Image, Icon, Center } from '@chakra-ui/react';
+import { AtSignIcon, CalendarIcon, TimeIcon } from '@chakra-ui/icons';
+import { Box, Text, VStack, Image, Icon, Center, HStack } from '@chakra-ui/react';
 import QRCode from 'qrcode.react';
 import { MdArrowBack, MdArrowForward } from 'react-icons/md';
 
@@ -67,13 +68,22 @@ export const Ticket: React.FC<TicketProps> = ({ userName, userNumber, totalUsers
       <Box maxW="sm" borderWidth="1px" borderRadius="lg" overflow="hidden" p={4} boxShadow="md" bg="gray.50" display="flex" alignItems="Center" justifyContent="center" height="100%" maxWidth="sm" m="auto">
         <VStack spacing={4} align="center" alignItems="center" justifyContent="center">
             
-          <Text fontSize="xl" fontWeight="bold">Ticket: {eventName}</Text>
-          <Text fontSize='lg' fontWeight="semibold">{`${userName} (${userNumber}/${totalUsers})`}</Text>
+          <Text fontSize="xl" fontWeight="bold">{`${userName} (${userNumber}/${totalUsers})`}</Text>
+          <Text fontSize='lg' fontWeight="semibold">Ticket: 57 Community meals</Text>
           <Box>
             <QRCode bgColor="#F7FAFC" value={qrValue} size={128} />
           </Box>
-          <Text fontSize='lg' fontWeight="semibold">Time: {eventTime}</Text>
-          <Text fontSize='lg' fontWeight="semibold">Venue: {venue}</Text>
+          
+        <Text marginBottom={-3}>
+            <CalendarIcon/>  2023-12-26 
+      </Text>
+      <HStack spacing={3}>
+      <Text>
+            <TimeIcon/> 1pm - 4pm
+      </Text>
+      <Text >
+          <AtSignIcon/>   Williamsburg</Text>
+          </HStack>
         </VStack>
       </Box>
     );
